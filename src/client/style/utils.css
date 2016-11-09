@@ -23,7 +23,7 @@
 }
 
 .bg-color--success {
-    background-color: $success-color !important;
+    background-color: var(--success-color) !important;
 }
 
 .height--auto {

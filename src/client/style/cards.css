@@ -1,7 +1,7 @@
 @import 'colors.css';
 .card {
     border-radius: 2px;
-    background-color: $white;
+    background-color: var(--white);
     box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.1);
     margin: 10px;
     padding: 10px;

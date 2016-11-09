@@ -5,11 +5,11 @@
     appearance: none;
     border: 1px solid transparent;
     height: 1.6rem;
-    box-shadow: inset 0px 1px 3px color($black a(50%));
+    box-shadow: inset 0px 1px 3px color(var(--black) a(50%));
     transition: box-shadow .2s ease, border .2s ease;
     &:focus {
         box-shadow: inset 0px 0px 0px rgba(0, 0, 0, 0);
-        border: 1px solid $border-color;
+        border: 1px solid var(--border-color);
     }
     outline:none;
 }

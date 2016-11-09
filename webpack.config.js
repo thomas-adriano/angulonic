@@ -1,8 +1,10 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const prodPlugins = [];
 const clientSrcFolder = path.resolve(path.resolve(__dirname, 'src'), 'client');
+
 const commonPlugins = [
     new HtmlWebpackPlugin({
         filename: 'index.html',
@@ -15,6 +17,7 @@ const commonPlugins = [
         "window.jQuery": "jquery"
     })
 ];
+
 const commonLoaders = [{
     test: /\.html$/,
     loader: 'html'
@@ -26,10 +29,12 @@ const commonLoaders = [{
     exclude: /(node_modules|bower_components)/,
     loader: 'babel', // 'babel-loader' is also a valid name to reference
 }];
+
 const devLoaders = [];
 const prodLoaders = [];
 const plugins = commonPlugins;
 const loaders = commonLoaders.concat(devLoaders);
+
 module.exports = {
     context: clientSrcFolder,
     entry: 'app.js',
@@ -42,10 +47,8 @@ module.exports = {
     },
     postcss: function() {
         return [
-            require('postcss-smart-import')(),
-            require('precss')(),
-            require("postcss-color-function"),
-            require('autoprefixer')({
+            require('postcss-import'),
+            require('postcss-cssnext')({
                 browsers: ['last 3 versions']
             }),
         ];

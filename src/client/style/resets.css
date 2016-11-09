@@ -1,6 +1,9 @@
 @import 'colors.css';
 @import 'inputs.css';
-$blue: #72A2D8;
+:root {
+    --blue: #72A2D8;
+}
+
 .selectize-control {
     border-color: transparent;
     background-color: transparent;
@@ -18,8 +21,8 @@ $blue: #72A2D8;
             margin-bottom: 8px !important;
             margin-right: 6px !important;
             border-radius: 2px !important;
-            background-color: $blue !important;
-            color: $white !important;
+            background-color: var(--blue) !important;
+            color: var(--white) !important;
             height: 3rem;
             min-width: 8rem;
             box-sizing: border-box;
@@ -27,11 +30,11 @@ $blue: #72A2D8;
             padding-top: 15px !important;
             .remove {
                 &:active, &:focus, &:hover {
-                    background-color: color($blue a(90%)) !important;
+                    background-color: color(var(--blue) a(90%)) !important;
                 }
             }
             &:active, &:focus, &:hover {
-                background-color: color($blue a(90%)) !important;
+                background-color: color(var(--blue) a(90%)) !important;
             }
             .remove {
             	font-size: 2rem;
