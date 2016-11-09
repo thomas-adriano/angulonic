@@ -13,6 +13,18 @@ Vue.directive('selectize', {
             labelField: 'text',
             searchField: ['text'],
             options: getItems(),
+            onItemAdd: (value, $item) => {
+                let payload = {
+                    target: value
+                };
+                store.commit('addTarget', payload);
+            },
+            onItemRemove: (value) => {
+                let payload = {
+                    target: value
+                };
+                store.commit('removeTarget', payload);
+            }
 
         });
     }
@@ -26,6 +38,5 @@ function getItems() {
             value: i
         };
     }
-    console.log('items: ' + res);
     return res;
 }

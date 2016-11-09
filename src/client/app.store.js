@@ -10,6 +10,9 @@ export default new Vuex.Store({
     mutations: {
         addTarget(state, payload) {
             state.targets.push(payload.target);
+        },
+        removeTarget(state, payload) {
+            state.targets = state.targets.filter(t => t !== payload.target);
         }
     },
     getters: {
