@@ -1,13 +1,6 @@
 import 'thirdparty-imports';
 
-import 'app.css';
-import 'style/utils.css';
-import 'style/globals.css';
-import 'style/buttons.css';
-import 'style/inputs.css';
-import 'style/cards.css';
-
-import 'style/resets.css';
+import 'style/main.pcss';
 
 import 'directives';
 

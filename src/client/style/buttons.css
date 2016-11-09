@@ -47,7 +47,8 @@
     display: flex;
     width: 100%;
     flex-direction: row;
-    >.btn {
-        flex: 99999999999 0 1px;
-    }
+}
+
+.btn-group-full>.btn {
+    flex: 99999999999 0 1px;
 }

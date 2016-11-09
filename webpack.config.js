@@ -22,8 +22,8 @@ const commonLoaders = [{
     test: /\.html$/,
     loader: 'html'
 }, {
-    test: /\.css$/,
-    loaders: ['style', 'css-loader?importLoaders=1', , 'postcss'],
+    test: /\.pcss$|\.css/,
+    loaders: ['style', 'css-loader?importLoaders=1', 'postcss'],
 }, {
     test: /\.js$/,
     exclude: /(node_modules|bower_components)/,
