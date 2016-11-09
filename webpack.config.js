@@ -22,7 +22,7 @@ const commonLoaders = [{
     test: /\.html$/,
     loader: 'html'
 }, {
-    test: /\.pcss$|\.css/,
+    test: /\.pcss$|\.css$/,
     loaders: ['style', 'css-loader?importLoaders=1', 'postcss'],
 }, {
     test: /\.js$/,
@@ -51,6 +51,7 @@ module.exports = {
             require('postcss-cssnext')({
                 browsers: ['last 3 versions']
             }),
+            require('postcss-nested'),
         ];
     },
     resolve: {

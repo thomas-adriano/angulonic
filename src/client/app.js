@@ -1,6 +1,5 @@
 import 'thirdparty-imports';
-
-import 'style/main.pcss';
+import 'style/index.js';
 
 import 'directives';
 

@@ -1,4 +1,4 @@
-import 'match-config/match-config.css';
+import 'match-config/match-config.pcss';
 import view from 'match-config/match-config.view.html';
 
 export default {
