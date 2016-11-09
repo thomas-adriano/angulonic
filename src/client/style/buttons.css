@@ -1,0 +1,53 @@
+@import 'colors.css';
+.btn {
+    border: 1px solid transparent;
+    border-radius: 2px;
+    background-color: $white;
+    cursor: pointer;
+    outline: none;
+    display: inline-block;
+    padding: 18px 18px;
+    margin: 0 5px;
+    box-shadow: 0px 1px 2px 1px $shadow-color;
+    transition: box-shadow .1s ease, background-color .1s ease, border-color .1s ease, color .1s ease;
+    &:hover, &:focus {
+        box-shadow: 0px 2px 4px 2px $shadow-color;
+    }
+    &:active {
+        box-shadow: 0px 0px 0px 0px $shadow-color;
+        background-color: color($white shade(5%));
+        border: 1px solid $border-color;
+    }
+}
+
+.btn--xl {
+    width: 100%;
+    display: block;
+    margin: 0;
+}
+
+.btn--success {
+    background-color: $success-color;
+    color: $white;
+    &:active {
+        background-color: color($success-color shade(10%));
+    }
+}
+
+.btn-group {
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+.btn-group--center {
+    text-align: center;
+}
+
+.btn-group-full {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    >.btn {
+        flex: 99999999999 0 1px;
+    }
+}

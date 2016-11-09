@@ -1,0 +1,49 @@
+@import 'colors.css';
+.input {
+    border-radius: 4px;
+    box-shadow: none;
+    appearance: none;
+    border: 1px solid transparent;
+    height: 1.6rem;
+    box-shadow: inset 0px 1px 3px color($black a(50%));
+    transition: box-shadow .2s ease, border .2s ease;
+    &:focus {
+        box-shadow: inset 0px 0px 0px rgba(0, 0, 0, 0);
+        border: 1px solid $border-color;
+    }
+    outline:none;
+}
+
+.form {
+    width: 100%;
+    text-align: center;
+}
+
+.form--full {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.form__header {
+    text-align: center;
+}
+
+.form__field {
+    margin: 6px 0;
+    display: inline-block;
+    width: 75%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+}
+
+.form__btn {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.label--top {
+    display: block;
+}

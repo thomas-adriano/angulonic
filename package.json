@@ -1,0 +1,42 @@
+{
+    "name": "angulonic",
+    "version": "0.0.1",
+    "main": "src/app.js",
+    "author": "thomas.o.adriano@gmail.com",
+    "license": "MIT",
+    "scripts": {
+        "test": "echo no tests yet",
+        "build": "webpack --progress --colors",
+        "live": "webpack-dev-server --inline --hot --progress --host 0.0.0.0"
+    },
+    "devDependencies": {
+        "autoprefixer": "^6.5.1",
+        "babel-core": "^6.16.0",
+        "babel-loader": "^6.2.5",
+        "babel-preset-es2015": "^6.14.0",
+        "css-loader": "^0.25.0",
+        "file-loader": "^0.9.0",
+        "html-loader": "^0.4.4",
+        "html-webpack-plugin": "^2.22.0",
+        "postcss": "^5.2.5",
+        "postcss-color-function": "^2.0.1",
+        "postcss-loader": "^1.0.0",
+        "postcss-smart-import": "^0.4.3",
+        "precss": "^1.4.0",
+        "style-loader": "^0.13.1",
+        "url-loader": "^0.5.7",
+        "webpack": "^1.13.2",
+        "webpack-dev-server": "^1.16.2"
+    },
+    "dependencies": {
+        "jquery": "^3.1.1",
+        "normalize.css": "^5.0.0",
+        "selectize": "^0.12.4",
+        "vue": "2.0.3",
+        "vue-router": "2.0.1",
+        "vuex": "2.0.0",
+        "cors": "^2.8.1",
+        "express": "^4.14.0",
+        "qrcode-npm": "^0.0.3"
+    }
+}
