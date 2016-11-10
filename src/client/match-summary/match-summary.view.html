@@ -3,7 +3,7 @@
     <div class="card" v-for="target in targets">
         {{target}}
     </div>
-    <button class="btn btn--success full-width no-x-margin" type="button">
+    <button v-on:click="printQrCodes" class="btn btn--success full-width no-x-margin" type="button">
         Imprimir QR codes
     </button>
 </section>

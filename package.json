@@ -36,6 +36,7 @@
         "qrcode-npm": "^0.0.3",
         "selectize": "^0.12.4",
         "vue": "2.0.3",
+        "vue-resource": "^1.0.3",
         "vue-router": "2.0.1",
         "vuex": "2.0.0"
     }
