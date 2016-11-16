@@ -5,7 +5,8 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
     state: {
-        targets: []
+        targets: [],
+        shapes: []
     },
     mutations: {
         addTarget(state, payload) {
@@ -13,11 +14,20 @@ export default new Vuex.Store({
         },
         removeTarget(state, payload) {
             state.targets = state.targets.filter(t => t !== payload.target);
-        }
+        },
+        addShape(state, payload) {
+            state.shapes.push(payload.shape);
+        },
+        removeShape(state, payload) {
+            state.shapes = state.shapes.filter(s => s !== payload.shape);
+        },
     },
     getters: {
         getTargets: state => {
             return state.targets;
+        },
+        getShapes: state => {
+            return state.shapes;
         }
     }
 })

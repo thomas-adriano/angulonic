@@ -4,9 +4,11 @@
 </template>
 
 <style scoped>
+	@import '../style/colors.pcss';
+
 	.square {
   		width: 100px;
   		height: 100px;
-  		background-color: red;
+  		background-color: var(--black);
 	}
 </style>

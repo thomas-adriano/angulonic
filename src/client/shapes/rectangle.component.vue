@@ -4,9 +4,11 @@
 </template>
 
 <style scoped>
+	@import '../style/colors.pcss';
+
 	.rectangle {
   		width: 200px;
   		height: 100px;
-  		background-color: red;
+  		background-color: var(--black);
 	}
 </style>
