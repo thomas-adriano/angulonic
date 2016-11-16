@@ -28,6 +28,10 @@ const commonLoaders = [{
     test: /\.js$/,
     exclude: /(node_modules|bower_components)/,
     loader: 'babel', // 'babel-loader' is also a valid name to reference
+}, {
+    test: /\.vue$/,
+    exclude: /(node_modules|bower_components)/,
+    loaders: ['babel', 'vue'], // 'babel-loader' is also a valid name to reference
 }];
 
 const devLoaders = [];
