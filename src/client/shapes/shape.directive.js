@@ -2,20 +2,20 @@ import store from 'app.store';
 
 export default {
     inserted: function(el, binding) {
-        let shapeStr = binding.value.shape;
-        el.innerHTML = getShape(shapeStr);
-        el.addEventListener('click', fn);
+        let shape = binding.value.shape;
+        let shapeName = shape.name;
+        let choosen = binding.value.choosen;
+        el.innerHTML = getShape(shapeName);
+        el.addEventListener('click', clickEvtListener);
 
-        function fn() {
-            if (binding.value.choosen) {
-                console.log('rem ' + shapeStr);
+        function clickEvtListener() {
+            if (choosen) {
                 store.commit('removeShape', {
-                    shape: shapeStr
+                    shape
                 });
             } else {
-                console.log('ad ' + shapeStr);
                 store.commit('addShape', {
-                    shape: shapeStr
+                    shape
                 });
             }
         };
@@ -30,6 +30,8 @@ export default {
                     return '<div class="triangle-eq"></div>';
                 case 'triangleIso':
                     return '<div class="triangle-iso"></div>';
+                default:
+                    return '<div>unsupported shape: ' + shape + '</div>';
             }
         }
     }

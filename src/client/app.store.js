@@ -5,30 +5,20 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
     state: {
-        targets: [],
         shapes: []
     },
     mutations: {
-        addTarget(state, payload) {
-            state.targets.push(payload.target);
-        },
-        removeTarget(state, payload) {
-            state.targets = state.targets.filter(t => t !== payload.target);
-        },
         addShape(state, payload) {
-            if (state.shapes.filter(s => s === payload.shape).length) {
+            if (state.shapes.filter(s => s.name === payload.shape.name).length) {
                 return;
             }
             state.shapes.push(payload.shape);
         },
         removeShape(state, payload) {
-            state.shapes = state.shapes.filter(s => s !== payload.shape);
+            state.shapes = state.shapes.filter(s => s.name !== payload.shape.name);
         },
     },
     getters: {
-        getTargets: state => {
-            return state.targets;
-        },
         getShapes: state => {
             return state.shapes;
         }
