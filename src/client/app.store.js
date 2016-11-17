@@ -16,6 +16,9 @@ export default new Vuex.Store({
             state.targets = state.targets.filter(t => t !== payload.target);
         },
         addShape(state, payload) {
+            if (state.shapes.filter(s => s === payload.shape).length) {
+                return;
+            }
             state.shapes.push(payload.shape);
         },
         removeShape(state, payload) {

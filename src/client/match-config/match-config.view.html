@@ -3,27 +3,15 @@
         <h1>
             Disponíveis
         </h1>
-        <square class="shapes-container__item">
-        </square>
-        <rectangle class="shapes-container__item">
-        </rectangle>
-        <triangle-eq class="shapes-container__item">
-        </triangle-eq>
-        <triangle-iso class="shapes-container__item">
-        </triangle-iso>
+        <div class="shapes-container__item" v-for="shape in availableShapes" v-shape="{shape, choosen:false}">
+        </div>
     </section>
     <section class="shapes-container">
         <h1>
             Escolhidas
         </h1>
-        <square class="shapes-container__item">
-        </square>
-        <rectangle class="shapes-container__item">
-        </rectangle>
-        <triangle-eq class="shapes-container__item">
-        </triangle-eq>
-        <triangle-iso class="shapes-container__item">
-        </triangle-iso>
+        <div class="shapes-container__item" v-for="shape in choosenShapes" v-shape="{shape, choosen:true}">
+        </div>
     </section>
     <router-link class="btn btn--success btn--xl" tag="button" to="/match-summary" type="button">
         Gerar

@@ -1,34 +1,25 @@
 import 'match-config/match-config.pcss';
 import view from 'match-config/match-config.view.html';
-import square from 'shapes/square.component.vue';
-import rectangle from 'shapes/rectangle.component.vue';
-import triangleEq from 'shapes/triangle-eq.component.vue';
-import triangleIso from 'shapes/triangle-iso.component.vue';
+import shapeDirective from 'shapes/shape.directive.js';
 
 export default {
     template: view,
-    components: {
-        square,
-        rectangle,
-        triangleEq,
-        triangleIso
-    },
-    data: {
-    	initialShapes: ['square', 'rectangle', 'triangleEq', 'triangleIso'],
+    data: function() {
+        return {
+            initialShapes: ['square', 'rectangle', 'triangleEq', 'triangleIso'],
+        }
     },
     computed: {
         choosenShapes() {
-            return this.$store.state.getShapes
+            let c = this.$store.getters.getShapes;
+            return c;
         },
         availableShapes() {
-        	return this.initialShapes.filter(e => this.$store.state.getShapes.indexOf(e) !== -1);
+            let av = this.initialShapes.filter(e => this.$store.getters.getShapes.indexOf(e) === -1);
+            return av;
         }
     },
-  	directives: {
-  		shapes: {
-  			inserted: () => {
-
-  			}
-  		}
-  	}
+    directives: {
+        shape: shapeDirective
+    }
 }
