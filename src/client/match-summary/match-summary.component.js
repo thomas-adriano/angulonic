@@ -1,18 +1,19 @@
 import 'match-summary/match-summary.pcss';
 import view from 'match-summary/match-summary.view.html';
 
+
 export default {
     template: view,
     computed: {
         targets() {
-            return this.$store.getters.getTargets;
+            return 0;
         }
     },
     methods: {
         printQrCodes: function(event) {
             this.$resource('http://localhost:3000/generate-qrcode')
                 .query({
-                    data: this.$store.getters.getTargets
+                    data: 0
                 })
                 .then((response) => {
                     if (!response.body) {

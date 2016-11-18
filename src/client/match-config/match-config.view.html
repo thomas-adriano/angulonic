@@ -13,7 +13,7 @@
         <div class="shapes-container__item shape-shadow" v-for="shape in choosenShapes" :key="shape.name" v-shape="{shape, choosen:true}">
         </div>
     </section>
-    <router-link class="btn btn--success btn--xl" tag="button" to="/match-summary" type="button">
+    <button v-on:click="generateMatch" class="btn btn--success btn--xl" type="button">
         Gerar
-    </router-link>
+    </button>
 </section>

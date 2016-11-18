@@ -1,6 +1,8 @@
 import 'match-config/match-config.pcss';
 import view from 'match-config/match-config.view.html';
 import shapeDirective from 'shapes/shape.directive.js';
+import router from '../app.routes';
+import bs58 from 'bs58';
 
 export default {
     template: view,
@@ -29,6 +31,30 @@ export default {
         availableShapes() {
             let av = this.initialShapes.filter(e => this.$store.getters.getShapes.map(s => s.name).indexOf(e.name) === -1);
             return av;
+        }
+    },
+    methods: {
+        generateMatch: function() {
+            let navVer = navigator.appVersion;
+            let toEncode = Date.now() + navVer + JSON.stringify(this.$store.getters.getShapes);
+            let encoded = bs58.encode(toEncode.split(''));
+            let matchId = encoded.substring(0, 6);
+
+            this.$resource('http://localhost:3000/match{/matchId}')
+                .save({
+                    matchId
+                }, {
+                    id: matchId,
+                    shapes: this.$store.getters.getShapes
+                })
+                .then((response) => {
+                    console.log('match ' + JSON.stringify(response.body) + ' registrado com sucesso!');
+                })
+                .catch(console.error);
+
+            router.push({
+                path: '/match-summary'
+            });
         }
     },
     directives: {
