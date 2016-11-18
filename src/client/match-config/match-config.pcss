@@ -1,12 +1,19 @@
-@import '../style/colors.pcss';
-
-.shapes-container {
-
+.shape-shadow {
+    transition: transform .2s ease, opacity .2s ease;
+    &:hover, &:focus {
+        transform: scale(1.2, 1.2);
+    }
+    &:active {
+        transform: scale(.8, .8);
+    }
+    animation: appear 2s infinite;
 }
 
-.shapes-container__item {
-	display: inline-block;
-	margin: 10px;
-	border-color: var(--black);
-	
+@keyframes appear {
+    0% {
+        background-color: black;
+    }
+    100% {
+        background-color: red;
+    }
 }

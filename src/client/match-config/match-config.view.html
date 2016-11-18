@@ -3,14 +3,14 @@
         <h1>
             Disponíveis
         </h1>
-        <div class="shapes-container__item" v-for="shape in availableShapes" :key="shape.name" v-shape="{shape, choosen:false}">
+        <div class="shapes-container__item shape-shadow" v-for="shape in availableShapes" :key="shape.name" v-shape="{shape, choosen:false}">
         </div>
     </section>
     <section class="shapes-container">
         <h1>
             Escolhidas
         </h1>
-        <div class="shapes-container__item" v-for="shape in choosenShapes" :key="shape.name" v-shape="{shape, choosen:true}">
+        <div class="shapes-container__item shape-shadow" v-for="shape in choosenShapes" :key="shape.name" v-shape="{shape, choosen:true}">
         </div>
     </section>
     <router-link class="btn btn--success btn--xl" tag="button" to="/match-summary" type="button">
