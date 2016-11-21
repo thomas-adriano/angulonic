@@ -17,10 +17,10 @@ export default new VueRouter({
         path: '/main-menu',
         component: MainMenu
     }, {
-        path: '/match-config',
+        path: '/match',
         component: MatchConfig
     }, {
-        path: '/match-summary',
+        path: '/match/:id',
         component: MatchSummary
     }]
 });

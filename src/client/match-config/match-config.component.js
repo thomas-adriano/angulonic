@@ -36,7 +36,7 @@ export default {
     methods: {
         generateMatch: function() {
             let navVer = navigator.appVersion;
-            let toEncode = Date.now() + navVer + JSON.stringify(this.$store.getters.getShapes);
+            let toEncode = this.getRandomInt(0, 10000) + navVer + JSON.stringify(this.$store.getters.getShapes);
             let encoded = bs58.encode(toEncode.split(''));
             let matchId = encoded.substring(0, 6);
 
@@ -53,8 +53,11 @@ export default {
                 .catch(console.error);
 
             router.push({
-                path: '/match-summary'
+                path: '/match/' + matchId
             });
+        },
+        getRandomInt: function(min, max) {
+            return Math.floor(Math.random() * (max - min)) + min;
         }
     },
     directives: {

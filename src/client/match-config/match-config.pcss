@@ -1,19 +1,9 @@
-.shape-shadow {
+.scale-on-interation {
     transition: transform .2s ease, opacity .2s ease;
     &:hover, &:focus {
         transform: scale(1.2, 1.2);
     }
     &:active {
         transform: scale(.8, .8);
-    }
-    animation: appear 2s infinite;
-}
-
-@keyframes appear {
-    0% {
-        background-color: black;
-    }
-    100% {
-        background-color: red;
     }
 }

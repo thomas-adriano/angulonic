@@ -1,9 +1,7 @@
 <section class="container--full">
-    Total de {{targets.length}} targets
-    <div class="card" v-for="target in targets">
-        {{target}}
+    <div v-match-qr-code="{matchQrCode: getMatchQrCode}">
     </div>
-    <button v-on:click="printQrCodes" class="btn btn--success full-width no-x-margin" type="button">
+    <button class="btn btn--success full-width no-x-margin" type="button" v-on:click="printQrCodes">
         Imprimir QR codes
     </button>
 </section>
