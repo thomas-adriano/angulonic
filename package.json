@@ -8,7 +8,7 @@
         "test": "echo no tests yet",
         "build": "webpack --progress --colors",
         "live": "webpack-dev-server --inline --hot --progress --host 0.0.0.0",
-        "server": "node src/server/server.js"
+        "server": "webpack --progress --colors && node src/server/server.js"
     },
     "devDependencies": {
         "autoprefixer": "^6.5.1",
